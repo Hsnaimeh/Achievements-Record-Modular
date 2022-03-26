@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.runkeeper.achievement.feature.home.domain.model.RecordsModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="@{model.active ? 1f :  0.5f}"
+        android:orientation="vertical"
+        android:paddingVertical="20dp">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            loadImageUrl="@{model.image}"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_name_medal"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:text="@{model.title}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="longest" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_time_medal"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:text="@{model.label}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="00:00" />
+
+    </LinearLayout>
+</layout>

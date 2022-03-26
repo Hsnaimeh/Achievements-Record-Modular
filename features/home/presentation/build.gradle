@@ -1,0 +1,10 @@
+apply plugin: "com.android.library"
+apply from: rootDir.path + "/sub_project.gradle"
+apply from: rootDir.path + "/dependencies.gradle"
+
+dependencies {
+    implementation project(":core:network")
+    implementation project(":core:ui")
+    api project(":features:home:domain")
+}
+

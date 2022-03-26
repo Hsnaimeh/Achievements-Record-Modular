@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "AchievementV2"
+include ':app'
+include ':features:home:domain'
+include ':features:home:data'
+include ':features:home:presentation'
+include ':features:main:presentation'
+include ':navigation'
+
+include ':core:data'
+include ':core:network'
+include ':core:ui'

@@ -1,0 +1,23 @@
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-parcelize"
+apply plugin: "kotlin-kapt"
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdk 32
+    buildFeatures.dataBinding true
+    buildFeatures.viewBinding true
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        versionCode Integer.parseInt(getProperty("app.versionCode"))
+        versionName getProperty("app.versionName")
+    }
+
+    defaultConfig {
+        buildConfigField("String", "API_BASE_URL", "\"" + rootProject.getProperty("app.api.base.production") + "\"")
+    }
+
+}

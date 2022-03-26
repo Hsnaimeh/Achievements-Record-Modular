@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.runkeeper.achievement.feature.home.domain.model.AchievementModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_title"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/secondary"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:text="@{model.title}"
+            android:textColor="@color/on_secondary"
+            app:layout_constraintEnd_toStartOf="@id/text_view_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Personal Records"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_label"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@color/secondary"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:text="@{model.label}"
+            android:textColor="@color/on_secondary_variant"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="4 of 6 " />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_medal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/text_view_title"
+            app:spanCount="2"
+            tools:listitem="@layout/row_medal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
